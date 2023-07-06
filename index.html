@@ -11,7 +11,8 @@
 
                 console.log(computerOptions[Math.floor(Math.random()*computerOptions.length)]);
             }
-            function match(playerSelection, computerSelection) {
+            function playRound(playerSelection, computerSelection) {
+                playerSelection = prompt("Please choose Rock, Paper, or Scissors.");
                 if (playerSelection === "Rock") {
                     if (computerSelection === "Rock") console.log("It's a draw!");
                     else if (computerSelection === "Paper") console.log("You lost! Paper beats Rock");
