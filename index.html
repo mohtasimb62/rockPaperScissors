@@ -11,6 +11,21 @@
 
                 console.log(computerOptions[Math.floor(Math.random()*computerOptions.length)]);
             }
+            function match(playerSelection, computerSelection) {
+                if (playerSelection === "Rock") {
+                    if (computerSelection === "Rock") console.log("It's a draw!");
+                    else if (computerSelection === "Paper") console.log("You lost! Paper beats Rock");
+                    else console.log("You win! Rock beats Scissors");
+                } else if (playerSelection === "Paper") {
+                    if (computerSelection === "Rock") console.log("You win! Rock beats Paper");
+                    else if (computerSelection === "Paper") console.log("It's a draw!");
+                    else console.log("You lost! Scissors beats Paper");
+                } else {
+                    if (computerSelection === "Rock") console.log("You lost! Rock beats Scissors");
+                    else if (computerSelection === "Paper") console.log("You win! Scissors beats Paper");
+                    else console.log("It's a draw!");
+                }
+            }
         </script>
     </body>
 </html>
