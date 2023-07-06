@@ -6,15 +6,15 @@
     </head>
     <body>
         <script>
+            let playerScore = 0;
+            let computerScore = 0;
+
             function getComputerChoice() {
                 const computerOptions = ["Rock", "Paper", "Scissors"];
                 return computerOptions[Math.floor(Math.random()*computerOptions.length)];
             }
 
             function playRound(playerSelection, computerSelection) {
-                let playerScore = 0;
-                let computerScore = 0;
-
                 if (playerSelection === "Rock") {
                     if (computerSelection === "Rock") {
                         return ("It's a draw!");
@@ -46,20 +46,21 @@
                         return ("It's a draw!");
                     }
                 }
-
-                if (playerScore > computerScore) console.log("Player WON!!!");
-                else console.log("Computer WON!!!");
             }
 
             function game() {
 
-                for (let i = 0; i <= 4; i++) {
+                for (let i = 0; i < 5; i++) {
                     playerSelection = prompt("Please choose Rock, Paper, or Scissors.");
                     computerSelection = getComputerChoice();
                     playRound(playerSelection, computerSelection);
                 }
 
+                if (playerScore > computerScore) console.log("Player WON!!!");
+                else console.log("Computer WON!!!");
+
             }
+
         </script>
     </body>
 </html>
