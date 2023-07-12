@@ -124,6 +124,14 @@ function playRound(playerSelection, computerSelection) {
             result.appendChild(scissorScissor);
         }
     }
+
+    const result = document.querySelector('#result');
+
+    const score = document.createElement('div');
+    score.classList.add('score');
+    score.textContent = `Player Score: ${playerScore}, Computer Score: ${computerScore}`;
+
+    result.appendChild(score);
 }
 
 function game() {
