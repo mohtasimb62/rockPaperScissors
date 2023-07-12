@@ -2,11 +2,11 @@ let playerScore = 0;
 let computerScore = 0;
 
 function getComputerChoice() {
-    const computerOptions = ["Rock"];      // , "Paper", "Scissors"];
+    const computerOptions = ["Rock", "Paper", "Scissors"];
     return computerOptions[Math.floor(Math.random()*computerOptions.length)];
 }
 
-const rock = document.querySelector('#rock');
+const rock = document.querySelector('#rock img');
 rock.addEventListener('click', () => {
     playRound("Rock", getComputerChoice());
 });
@@ -29,43 +29,99 @@ function playRound(playerSelection, computerSelection) {
         if (computerChoice === 'rock') {
             const result = document.querySelector('#result');
 
-            const rockRes = document.createElement('div');
-            rockRes.classList.add('rockRes');
-            rockRes.textContent("It's a tie!");
+            const rockRock = document.createElement('div');
+            rockRock.classList.add('rockRock');
+            rockRock.textContent = "It's a tie!";
 
-            result.appendChild(rockRes);
-
-
-
-
-
+            result.appendChild(rockRock);
 
         } else if (computerChoice === 'paper') {
             computerScore++;
-            return ("You lost! Paper beats Rock");
+            
+            const result = document.querySelector('#result');
+
+            const rockPaper = document.createElement('div');
+            rockPaper.classList.add('rockPaper');
+            rockPaper.textContent = "You lost! Paper beats Rock";
+
+            result.appendChild(rockPaper);
+            
         } else {
             playerScore++;
-            return ("You win! Rock beats Scissors");
+
+            const result = document.querySelector('#result');
+
+            const rockScissor = document.createElement('div');
+            rockScissor.classList.add('rockScissor');
+            rockScissor.textContent = "You win! Rock beats Scissors";
+
+            result.appendChild(rockScissor);
         }
     } else if (playerChoice === 'paper') {
         if (computerChoice === 'rock') {
             playerScore++;
-            return ("You win! Rock beats Paper");
+
+            const result = document.querySelector('#result');
+
+            const paperRock = document.createElement('div');
+            paperRock.classList.add('paperRock');
+            paperRock.textContent = "You win! Paper beats Rock";
+
+            result.appendChild(paperRock);
+
         } else if (computerChoice === 'paper') {
-            return ("It's a draw!");
+            const result = document.querySelector('#result');
+
+            const paperPaper = document.createElement('div');
+            paperPaper.classList.add('paperPaper');
+            paperPaper.textContent = "It's a tie!";
+
+            result.appendChild(paperPaper);
+
         } else {
             computerScore++;
-            return ("You lost! Scissors beats Paper");
+
+            const result = document.querySelector('#result');
+
+            const paperScissor = document.createElement('div');
+            paperScissor.classList.add('paperScissor');
+            paperScissor.textContent = "You lost! Scissors beats Paper";
+
+            result.appendChild(paperScissor);
+
         }
     } else {
         if (computerChoice === 'rock') {
             computerScore++;
-            return ("You lost! Rock beats Scissors");
+
+            const result = document.querySelector('#result');
+
+            const scissorRock = document.createElement('div');
+            scissorRock.classList.add('scissorRock');
+            scissorRock.textContent = "You lost! Rock beats Scissors";
+
+            result.appendChild(scissorRock);
+
         } else if (computerChoice === 'paper') {
             playerScore++;
-            return ("You win! Scissors beats Paper");
+
+            const result = document.querySelector('#result');
+
+            const scissorPaper = document.createElement('div');
+            scissorPaper.classList.add('scissorPaper');
+            scissorPaper.textContent = "You win! Scissors beats Paper";
+
+            result.appendChild(scissorPaper);
+
         } else {
-            return ("It's a draw!");
+
+            const result = document.querySelector('#result');
+
+            const scissorScissor = document.createElement('div');
+            scissorScissor.classList.add('scissorScissor');
+            scissorScissor.textContent = "It's a tie!";
+
+            result.appendChild(scissorScissor);
         }
     }
 }
