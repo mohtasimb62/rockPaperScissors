@@ -32,7 +32,7 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {
 
-    if (playerScore < 5 && computerScore < 5) {
+    if (playGame()) {
         const playerChoice = playerSelection.toLowerCase();
         const computerChoice = computerSelection.toLowerCase();
 
@@ -133,4 +133,8 @@ function playRound(playerSelection, computerSelection) {
             score.appendChild(finalScore);
         }
     }
+}
+
+function playGame() {
+    return playerScore < 5 && computerScore < 5;
 }
