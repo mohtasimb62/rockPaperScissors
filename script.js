@@ -1,22 +1,7 @@
 let playerScore = 0;
 let computerScore = 0;
 
-const result = document.querySelector('#result');
-
-const score = document.querySelector('#score');
-
-const displayScore = document.createElement('div');
-displayScore.classList.add('displayScore');
-displayScore.textContent = `Player Score: ${playerScore}, Computer Score: ${computerScore}`;
-
-score.appendChild(displayScore);
-
-function getComputerChoice() {
-    const computerOptions = ["Rock", "Paper", "Scissors"];
-    return computerOptions[Math.floor(Math.random()*computerOptions.length)];
-}
-
-const rock = document.querySelector('#rock img');
+const rock = document.querySelector('#rock');
 rock.addEventListener('click', () => {
     playRound("Rock", getComputerChoice());
 });
@@ -30,6 +15,20 @@ const scissor = document.querySelector('#scissor');
 scissor.addEventListener('click', () => {
     playRound("Scissor", getComputerChoice());
 });
+
+const result = document.querySelector('#result');
+const score = document.querySelector('#score');
+
+const displayScore = document.createElement('div');
+displayScore.classList.add('displayScore');
+displayScore.textContent = `Player Score: ${playerScore}, Computer Score: ${computerScore}`;
+
+score.appendChild(displayScore);
+
+function getComputerChoice() {
+    const computerOptions = ["Rock", "Paper", "Scissors"];
+    return computerOptions[Math.floor(Math.random()*computerOptions.length)];
+}
 
 function playRound(playerSelection, computerSelection) {
 
@@ -91,7 +90,7 @@ function playRound(playerSelection, computerSelection) {
                 result.appendChild(paperScissor);
     
             }
-            
+
         } else {
             if (computerChoice === 'rock') {
                 computerScore++;
@@ -134,21 +133,4 @@ function playRound(playerSelection, computerSelection) {
             score.appendChild(finalScore);
         }
     }
-}
-
-
-
-
-
-function game() {
-
-    for (let i = 0; i < 5; i++) {
-        playerSelection = prompt("Please choose Rock, Paper, or Scissors.");
-        computerSelection = getComputerChoice();
-        playRound(playerSelection, computerSelection);
-    }
-
-    if (playerScore > computerScore) console.log("Player WON!!!");
-    else console.log("Computer WON!!!");
-
 }
