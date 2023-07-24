@@ -19,10 +19,6 @@ scissor.addEventListener('click', () => {
     playRound("Scissor", getComputerChoice());
 });
 
-if (playerScore > 5 || computerScore > 5) {
-    console.log("DONEEEE");
-}
-
 const result = document.querySelector('#result');
 
 const displayScore = document.createElement('div');
@@ -105,6 +101,7 @@ function updateScore() {
     displayScore.textContent = `Player Score: ${playerScore}, Computer Score: ${computerScore}`;
 }
 
+// function to decide whether or not to play another round
 function anotherRound() {
-    return playerScore < 5 || computerScore < 5;
+    return playerScore < 5 && computerScore < 5;
 }
