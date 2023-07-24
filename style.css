@@ -1,10 +1,32 @@
+body {
+    background-color: azure;
+}
+
 .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+
+.weapons {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 50px;
+    padding: 50px;
 }
 
 img {
     width: 200px;
     height: 150px;
+}
+
+#result {
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
